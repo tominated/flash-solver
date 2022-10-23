@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f9f9f9;
+  color: #111;
+  font-size: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.4;
+  max-width: 360px;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+}
+
+
+
+.form-control-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+details {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+summary {
+  margin: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+summary + * {
+  margin-top: 20px;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-row-value {
+  font-size: 12px;
+}
+
+.labeled-range-slider {
+  margin-bottom: 40px;
+}
+
+.labeled-range-slider input {
+  height: auto;
+}
+
+.labeled-range-slider datalist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 10px);
+  justify-content: space-between;
+  place-items: center;
+  width: 100%;
+}
+
+.labeled-range-slider datalist option {
+  padding: 0;
+  padding-top: 10px;
+  font-size: 10px;
+  height: 10px;
+  text-align: center;
+}
+
+.segmented-control {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 100%;
+}
+
+.segmented-control li {
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.segmented-control li input {
+  position: absolute;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  padding: 0;
+}
+
+.segmented-control li label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border: 1px solid #999;
+  border-left: none;
+}
+
+.segmented-control li:first-child label {
+  border-left: 1px solid #999;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.segmented-control li:last-child label {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.segmented-control li input:checked + label {
+  background: #ccc;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Flash Solver</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <form>
+    <details open class="section-setup">
+      <summary>Setup</summary>
+    
+      <div class="form-control-grid">
+        <div>
+          <label for="field-guide-number">Guide Number</label>
+    
+          <input type="number" id="field-guide-number" name="field-guide-number" value="20" />
+        </div>
+    
+        <div>
+          <label for="field-iso">ISO</label>
+    
+          <input disabled type="number" id="field-iso" name="field-iso" value="100" />
+        </div>
+      </div>
+    </details>
+    
+    <section>
+      <div class="form-control">
+        <div class="label-row">
+          <label for="field-exposure-compensation">
+            Exposure Compensation
+          </label>
+    
+          <div class="label-row-value">
+            <span id="value-exposure-compensation">
+              +1
+            </span>
+            EV
+          </div>
+        </div>
+    
+        <div class="labeled-range-slider">
+          <input type="range" id="field-exposure-compensation" name="field-exposure-compensation" min="-3" max="3"
+            step="0.5" list="list-exposure-compensation" />
+    
+          <datalist id="list-exposure-compensation">
+            <option value="-3">-3</option>
+            <option value="-2.5"></option>
+            <option value="-2">-2</option>
+            <option value="-1.5"></option>
+            <option value="-1">-1</option>
+            <option value="-0.5"></option>
+            <option value="0">0</option>
+            <option value="0.5"></option>
+            <option value="1">+1</option>
+            <option value="1.5"></option>
+            <option value="2">+2</option>
+            <option value="2.5"></option>
+            <option value="3">+3</option>
+          </datalist>
+        </div>
+      </div>
+    
+      <div class="form-control">
+        <div class="label-row">
+          <label>
+            Solve For:
+          </label>
+        </div>
+    
+        <ul class="segmented-control">
+          <li>
+            <input disabled type="radio" name="field-mode" id="field-mode-aperture" value="aperture" checked />
+            <label for="field-mode-aperture" aria-label="Solve for Aperture">Aperture</label>
+          </li>
+    
+          <li>
+            <input disabled type="radio" name="field-mode" id="field-mode-flash-strength" value="flash-strength" />
+            <label for="field-mode-flash-strength" aria-label="Solve for Flash Strength">Strength</label>
+          </li>
+    
+          <li>
+            <input disabled type="radio" name="field-mode" id="field-mode-distance" value="distance" />
+            <label for="field-mode-distance" aria-label="Solve for Distance">Distance</label>
+          </li>
+        </ul>
+      </div>
+    
+      <div class="form-control">
+        <div class="label-row">
+          <label for="field-aperture">
+            Aperture
+          </label>
+    
+          <div class="label-row-value">
+            ƒ/
+            <span id="value-aperture">8</span>
+          </div>
+        </div>
+    
+        <div class="labeled-range-slider">
+          <input disabled type="range" id="field-aperture" name="field-aperture" min="0" max="9" step="0.5" value="6"
+            list="list-aperture" />
+    
+          <!-- Values are n in sqrt(2)^n -->
+          <datalist id="list-aperture">
+            <option value="0">1</option>
+            <option value="0.5"></option>
+            <option value="1">1.4</option>
+            <option value="1.5"></option>
+            <option value="2">2</option>
+            <option value="2.5"></option>
+            <option value="3">2.8</option>
+            <option value="3.5"></option>
+            <option value="4">4</option>
+            <option value="4.5"></option>
+            <option value="5">5.6</option>
+            <option value="5.5"></option>
+            <option value="6">8</option>
+            <option value="6.5"></option>
+            <option value="7">11</option>
+            <option value="7.5"></option>
+            <option value="8">16</option>
+            <option value="8.5"></option>
+            <option value="9">22</option>
+          </datalist>
+        </div>
+      </div>
+    
+      <div class="form-control">
+        <div class="label-row">
+          <label for="field-flash-strength">
+            Flash Strength
+          </label>
+    
+          <div class="label-row-value">
+            <sup>1/</sup>
+            <span id="value-flash-strength">1</span>
+          </div>
+        </div>
+    
+        <div class="labeled-range-slider">
+          <input type="range" id="field-flash-strength" name="field-flash-strength" min="-6" max="0" step="1" value="0"
+            list="list-flash-strength" />
+    
+          <!-- Values are in stops -->
+          <datalist id="list-flash-strength">
+            <option value="-6">64</option>
+            <option value="-5">32</option>
+            <option value="-4">16</option>
+            <option value="-3">8</option>
+            <option value="-2">4</option>
+            <option value="-1">2</option>
+            <option value="0">1</option>
+          </datalist>
+        </div>
+      </div>
+    
+      <div class="form-control">
+        <div class="label-row">
+          <label for="field-distance">
+            Distance
+          </label>
+    
+          <div class="label-row-value">
+            <span id="value-distance">
+              1.5
+            </span>
+            m
+          </div>
+        </div>
+    
+        <div class="labeled-range-slider">
+          <input type="range" id="field-distance" name="field-distance" min="1" max="10" step="0.5" value="1.5"
+            list="list-distance" />
+    
+          <!-- Values are in stops -->
+          <datalist id="list-distance">
+            <option value="1">1</option>
+            <option value="1.5"></option>
+            <option value="2">2</option>
+            <option value="2.5"></option>
+            <option value="3">3</option>
+            <option value="3.5"></option>
+            <option value="4">4</option>
+            <option value="4.5"></option>
+            <option value="5">5</option>
+            <option value="5.5"></option>
+            <option value="6">6</option>
+            <option value="6.5"></option>
+            <option value="7">7</option>
+            <option value="7.5"></option>
+            <option value="8">8</option>
+            <option value="8.5"></option>
+            <option value="9">9</option>
+            <option value="9.5"></option>
+            <option value="10">10</option>
+          </datalist>
+        </div>
+      </div>
+    </section>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
