@@ -18,9 +18,8 @@ body {
   margin: 20px auto;
 }
 
-h1 {
-  font-size: 18px;
-  margin-bottom: 20px;
+p {
+  margin: 0 0 20px 0;
 }
 
 label {
@@ -35,7 +34,11 @@ input {
   padding: 0 10px;
 }
 
-
+footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
 
 .form-control-grid {
   display: grid;
