@@ -59,9 +59,9 @@ function initSlider(field, values, startIndex = 0) {
   const datalist = document.createElement('datalist');
   datalist.id = field.id + "-datalist";
 
-  values.forEach(value => {
+  values.forEach((value, i) => {
     const option = document.createElement('option');
-    option.value = typeof value === 'object' ? value.value : value;
+    option.value = i;
     option.textContent = typeof value === 'object' ? value.label : value
     datalist.appendChild(option);
   });
