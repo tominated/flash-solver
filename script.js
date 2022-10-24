@@ -67,11 +67,11 @@ function initSlider(field, values, startIndex = 0) {
   });
 
   field.parentElement.insertBefore(datalist, field.nextSibling);
-  field.list = datalist.id
-  field.min = '0'
-  field.max = (values.length - 1).toString();
-  field.step = '1';
-  field.value = startIndex.toString();
+  field.setAttribute('list', datalist.id);
+  field.setAttribute('min', '0');
+  field.setAttribute('max', (values.length - 1).toString());
+  field.setAttribute('step', '1');
+  field.setAttribute('value', startIndex.toString());
 
   function getIndex() {
     return parseInt(field.value, 10);
