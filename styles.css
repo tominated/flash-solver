@@ -27,7 +27,7 @@ label {
   margin-bottom: 4px;
 }
 
-input {
+input, select {
   display: block;
   width: 100%;
   height: 40px;
@@ -48,12 +48,18 @@ footer {
 }
 
 .form-control {
-  margin-bottom: 10px;
+  padding: 10px;
+  margin: 0 -10px;
+  border-radius: 4px;
+}
+
+.form-control.isActive {
+  background: #eee;
 }
 
 details {
   padding-bottom: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -73,12 +79,16 @@ summary + * {
   align-items: center;
 }
 
+.isActive .label-row {
+  font-weight: bold;
+}
+
 .label-row-value {
   font-size: 12px;
 }
 
 .labeled-range-slider {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .labeled-range-slider input {
@@ -103,7 +113,7 @@ summary + * {
 
 .segmented-control {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 0;
   display: flex;
   justify-content: stretch;

@@ -9,123 +9,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <form>
-    <details class="section-setup">
-      <summary>Setup</summary>
-    
-      <div class="form-control-grid">
-        <div>
-          <label for="field-guide-number">Guide Number</label>
-    
-          <input type="number" id="field-guide-number" name="field-guide-number" value="20" />
-        </div>
-    
-        <div>
-          <label for="field-iso">ISO</label>
-    
-          <input disabled type="number" id="field-iso" name="field-iso" value="100" />
-        </div>
-      </div>
-    </details>
-    
-    <section>
-      <div class="form-control">
-        <div class="label-row">
-          <label for="field-exposure-compensation">
-            Exposure Compensation
-          </label>
-    
-          <div class="label-row-value">
-            <span id="value-exposure-compensation"></span>
-            EV
-          </div>
-        </div>
-    
-        <div class="labeled-range-slider">
-          <input type="range" id="field-exposure-compensation" name="field-exposure-compensation" />
-        </div>
-      </div>
-    
-      <!-- 
-      <div class="form-control">
-        <div class="label-row">
-          <label>
-            Solve For:
-          </label>
-        </div>
-    
-        <ul class="segmented-control">
-          <li>
-            <input disabled type="radio" name="field-mode" id="field-mode-aperture" value="aperture" checked />
-            <label for="field-mode-aperture" aria-label="Solve for Aperture">Aperture</label>
-          </li>
-    
-          <li>
-            <input disabled type="radio" name="field-mode" id="field-mode-flash-strength" value="flash-strength" />
-            <label for="field-mode-flash-strength" aria-label="Solve for Flash Strength">Strength</label>
-          </li>
-    
-          <li>
-            <input disabled type="radio" name="field-mode" id="field-mode-distance" value="distance" />
-            <label for="field-mode-distance" aria-label="Solve for Distance">Distance</label>
-          </li>
-        </ul>
-      </div>
-      -->
-    
-      <div class="form-control">
-        <div class="label-row" style="font-weight: bold;">
-          <label for="field-aperture">
-            Aperture
-          </label>
-    
-          <div class="label-row-value">
-            ƒ/
-            <span id="value-aperture"></span>
-          </div>
-        </div>
-    
-        <div class="labeled-range-slider">
-          <input disabled type="range" id="field-aperture" name="field-aperture" />
-        </div>
-      </div>
-    
-      <div class="form-control">
-        <div class="label-row">
-          <label for="field-flash-strength">
-            Flash Strength
-          </label>
-    
-          <div class="label-row-value">
-            <sup>1/</sup>
-            <span id="value-flash-strength">1</span>
-          </div>
-        </div>
-    
-        <div class="labeled-range-slider">
-          <input type="range" id="field-flash-strength" name="field-flash-strength"/>
-        </div>
-      </div>
-    
-      <div class="form-control">
-        <div class="label-row">
-          <label for="field-distance">
-            Distance
-          </label>
-    
-          <div class="label-row-value">
-            <span id="value-distance">
-            </span>
-            m
-          </div>
-        </div>
-    
-        <div class="labeled-range-slider">
-          <input type="range" id="field-distance" name="field-distance" />
-        </div>
-      </div>
-    </section>
-  </form>
+  <div id="app"></div>
 
   <footer>
     <p>
@@ -140,6 +24,6 @@
     </p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.mjs" type="module"></script>
 </body>
 </html>
