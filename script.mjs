@@ -129,31 +129,27 @@ function Setup({ guideNumber, iso, onChangeGuideNumber, onChangeIso }) {
     h('option', { key: value, value }, label)
   );
 
-  return h('details', { class: 'section-setup' }, [
-    h('summary', null, 'Setup'),
+  return h('div', { class: 'form-control form-control-grid' }, [
+    h('div', null, [
+      h('label', { for: guideNumberId }, 'Guide Number'),
 
-    h('div', { class: 'form-control-grid' }, [
-      h('div', null, [
-        h('label', { for: guideNumberId }, 'Guide Number'),
-
-        h('input', {
-          type: 'number',
-          id: guideNumberId,
-          value: guideNumber,
-          onInput: (e) => onChangeGuideNumber(e.target.value),
-        }),
-      ]),
-
-      h('div', null, [
-        h('label', { for: isoId }, 'ISO'),
-
-        h('select', {
-          id: isoId,
-          value: iso,
-          onChange: (e) => onChangeIso(e.target.value),
-        }, isoOptions),
-      ]),
+      h('input', {
+        type: 'number',
+        id: guideNumberId,
+        value: guideNumber,
+        onInput: (e) => onChangeGuideNumber(e.target.value),
+      }),
     ]),
+
+    h('div', null, [
+      h('label', { for: isoId }, 'ISO'),
+
+      h('select', {
+        id: isoId,
+        value: iso,
+        onChange: (e) => onChangeIso(e.target.value),
+      }, isoOptions),
+    ])
   ]);
 }
 
